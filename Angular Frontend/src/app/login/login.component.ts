@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
             (res: any) => {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Login successfully!',
+                    title: 'User Login successfully!',
                     text: 'Welcome to User',
                     confirmButtonText: 'OK'
                 });

@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/login.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-adminlogin',
   templateUrl: './adminlogin.component.html',
@@ -47,19 +48,39 @@ export class AdminloginComponent {
         if (response.token) {
           localStorage.setItem('token', response.token);
           localStorage.setItem('role', 'admin'); 
-          this.router.navigate(['/admin/dashboard']); 
+          Swal.fire({
+            icon: 'success',
+            title: 'Admin Login Successful!',
+            text: 'You are being redirected to the admin dashboard.',
+            timer: 1500,
+            showConfirmButton: false
+          }).then(() => {
+            this.router.navigate(['/admin/dashboard']);
+          });
         } else {
-          alert('Invalid admin credentials!');
+          this.showLoginError();
         }
       },
       error => {
-        alert('Invalid admin credentials!');
+        this.showLoginError();
         console.error('Login error:', error);
       }
     );
   }
 
   userLogin() {
-    alert('User login logic here.');
+    Swal.fire({
+      icon: 'info',
+      title: 'User login',
+      text: 'User login logic here.'
+    });
+  }
+
+  showLoginError() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Login Failed',
+      text: 'Invalid admin credentials!'
+    });
   }
 }
