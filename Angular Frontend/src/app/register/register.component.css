@@ -1,0 +1,59 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f093fb;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+  
+    /* Ensure the background covers the entire viewport */
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* For the container that holds the form */
+  .container-fluid {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Adjust the card and form responsiveness */
+  .card-registration {
+    border-radius: 15px;
+  }
+  
+  .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+  
+  .card-registration .select-arrow {
+    top: 13px;
+  }
+  
+  @media (max-width: 768px) {
+    .card-registration {
+      margin-top: 20px;
+    }
+  
+    .card-body {
+      padding: 2rem;
+    }
+  
+    .gradient-custom {
+      min-height: auto;
+    }
+  }
+
+.form-control-lg {
+    min-height: calc(1.5em + 1rem + 2px);
+    /* padding: .5rem 1rem; */
+    font-size: 0.90rem;
+    border-radius: .3rem;
+}

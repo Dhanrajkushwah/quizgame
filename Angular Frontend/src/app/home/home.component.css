@@ -1,0 +1,152 @@
+/* Ensure the body and html occupy the full height */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Optional: Set a default font */
+  background: #0d080e;
+  background: -webkit-linear-gradient(to bottom right, rgb(16, 15, 16), rgb(15, 14, 14));
+  background: linear-gradient(to bottom right, rgb(24, 22, 24), rgb(27, 13, 15));
+}
+
+/* Container fluid with background image */
+.container-fluid {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://cdni.iconscout.com/illustration/premium/thumb/online-quiz-illustration-download-in-svg-png-gif-file-formats--exam-test-examination-paper-pack-school-education-illustrations-6665988.png');
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 15px; /* Optional: Add padding to the container */
+}
+
+/* Responsive text */
+.custom-heading {
+  font-size: 2rem; /* Base font size */
+  color: white;
+  font-weight: 400px;
+  margin-bottom: 20px;
+  padding: 0 15px; /* Add padding for small screens */
+}
+
+.custom-button {
+  font-size: 1.2rem; /* Base font size */
+  padding: 10px 28px; /* Add padding for better touch area */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 576px) {
+  .custom-heading {
+      font-size: 2.5rem; /* Slightly larger on small screens */
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .custom-heading {
+      font-size: 2rem; /* Larger on medium screens */
+  }
+
+  .custom-button {
+      font-size: 0.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .custom-heading {
+      font-size: 2.5rem; /* Even larger on large screens */
+  }
+
+  .custom-button {
+      font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom-heading {
+      font-size: 3rem; /* Largest size on extra-large screens */
+  }
+
+  .custom-button {
+      font-size: 0.9rem;
+  }
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #f0f2f5;
+}
+
+.quiz-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-width: 300px; /* Limit the max width for larger screens */
+}
+
+.quiz-content {
+  flex: 2;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.start-btn {
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .quiz-page {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .image-container {
+      margin-bottom: 20px;
+  }
+
+  .quiz-content {
+      width: 100%;
+      padding: 15px;
+  }
+}

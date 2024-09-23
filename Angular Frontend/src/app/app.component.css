@@ -1,0 +1,143 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.hide-large {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .sidenav {
+    width: 100%;
+  }
+
+  .hide-large {
+    display: inline-block;
+  }
+
+  mat-sidenav {
+    position: absolute;
+    width: 80%;
+  }
+}
+.toolbar-title {
+  flex-grow: 1;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.hide-large {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-large {
+    display: inline-flex;
+  }
+}
+/* Style for mat-nav-list */
+mat-nav-list {
+  background-color: #f4f5f7; /* Light gray background similar to Trello */
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for each navigation item */
+
+
+/* Icon styling */
+a.mat-list-item mat-icon {
+  margin-right: 16px; /* Space between icon and text */
+  font-size: 24px; /* Larger icons for better visibility */
+}
+
+/* Hover effect */
+a.mat-list-item:hover {
+  background-color: #e0e0e0; /* Light gray hover background */
+  color: #000; /* Darker text color on hover */
+}
+
+/* Active item styling */
+a.mat-list-item.active {
+  background-color: #0079bf; /* Blue background for active item */
+  color: #fff; /* White text for active item */
+}
+.footer {
+  background-color: #004080; /* TCS-like dark blue */
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-links,
+.footer-info {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+}
+
+.footer-links h4,
+.footer-info h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #e0e0e0;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 10px 0;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #add8e6; /* Light blue on hover */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #add8e6;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+}

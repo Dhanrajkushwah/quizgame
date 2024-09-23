@@ -1,0 +1,25 @@
+<div class="quiz-container">
+    <h2>Quiz Management</h2>
+    
+    <div class="question-list">
+      <div *ngFor="let question of questions" class="question-item">
+        <p>{{ question.question }}</p>
+        <ul>
+          <li *ngFor="let option of question.options">{{ option }}</li>
+        </ul>
+        <button (click)="editQuestion(question)">Edit</button>&nbsp;
+        <button (click)="deleteQuestion(question._id)">Delete</button>
+      </div>
+    </div>
+  
+    <div class="add-question-form">
+      <h3>Add New Question</h3>
+      <input [(ngModel)]="newQuestion" placeholder="Enter your question" />
+      <div>
+        <input *ngFor="let option of newOptions; let i = index" [(ngModel)]="newOptions[i]" placeholder="Option {{ i + 1 }}" />
+      </div>
+      <input [(ngModel)]="correctAnswer" placeholder="Correct Answer" />
+      <button (click)="addQuestion()">{{ selectedQuestionId ? 'Update Question' : 'Add Question' }}</button>
+    </div>
+  </div>
+  

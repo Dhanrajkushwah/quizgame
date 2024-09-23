@@ -1,0 +1,54 @@
+<!-- Start Screen -->
+<div *ngIf="!quizStarted && !quizCompleted" class="start-screen">
+    <div class="content-container">
+      <div class="image-container">
+        <img src="https://cdni.iconscout.com/illustration/premium/thumb/online-quiz-illustration-download-in-svg-png-gif-file-formats--test-exam-digital-school-and-education-pack-illustrations-3726683.png?f=webp" alt="Quiz Banner">
+      </div>
+      <div class="text-container">
+        <h2>Welcome to the Quiz!</h2>
+        <button class="start-btn" (click)="startQuiz()">Start Quiz</button>
+      </div>
+    </div>
+  </div>
+  <!-- Quiz Screen -->
+ <!-- Quiz Screen -->
+<div *ngIf="quizStarted && !quizCompleted" class="quiz-container mt-5 mb-5">
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress" [style.width]="((currentQuestionIndex + 1) / questions.length) * 100 + '%'"></div>
+    </div>
+
+    <h2>Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}</h2>
+    <p [class.time-expired]="timer <= 10">Time Remaining: {{ timer }} seconds</p>
+    <p class="question-text">{{ questions[currentQuestionIndex]?.question }}</p>
+
+    <ul class="options">
+        <li *ngFor="let option of questions[currentQuestionIndex]?.options; let i = index"
+            [class.selected]="selectedOption === i"
+            (click)="selectOption(i)">
+            {{ option }}
+        </li>
+    </ul>
+
+    <!-- Display answer status -->
+    <div *ngIf="isAnswerChecked">
+      <p [ngClass]="{'correct-answer': answerStatus === 'Correct!', 'incorrect-answer': answerStatus === 'Incorrect!'}">
+        {{ answerStatus }}
+      </p>
+    </div>
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <button (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">Previous</button>
+        <button (click)="checkAnswer()" [disabled]="selectedOption === null || isAnswerChecked">Check Answer</button>
+        <button (click)="nextQuestion()" [disabled]="!isAnswerChecked">Next</button>
+    </div>
+</div>
+
+  
+  <!-- Result Screen -->
+  <div *ngIf="quizCompleted" class="result-screen mt-5">
+    <h2>Quiz Completed!</h2>
+    <p>Your Score: {{ score }}/{{ questions.length }}</p>
+    <button class="restart-btn" (click)="restartQuiz()">Restart Quiz</button>
+  </div>
+  
